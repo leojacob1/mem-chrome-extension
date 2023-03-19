@@ -11,11 +11,15 @@ globalStyles.innerHTML = `
   position: fixed;
   left: 0;
   top: 0;
-  width: 300px;
-  height: 100vh;
+  width: 600px;
+  height: 400px;
   background: #ffffff;
   border-right: 1px solid #c2c2c2;
   z-index: 999999999;
+  }
+  body {
+    width: 300px;
+    height: 300px
   }
 `;
 document.body.appendChild(rootElement);
