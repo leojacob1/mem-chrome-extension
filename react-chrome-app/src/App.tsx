@@ -11,12 +11,10 @@ function App() {
 
   useEffect(() => {
     chrome.storage.sync.get("memApiKey", function(items){
-      console.log('2', items);
       if (items.memApiKey) {
         const memClient = new MemClient({
           apiAccessToken: items.memApiKey
         });
-        console.log('1', memClient)
         setMemClient(memClient);
         chrome.tabs.query({active: true}, function(tabs){
           if (tabs.length) {
@@ -30,7 +28,7 @@ function App() {
 
   const createMem = () => {
     if (!activeTab || !memClient) return;
-    const content = `${activeTab.title} (${activeTab.url}) 
+    const content = `[${activeTab.title}](${activeTab.url}) 
     ${notes ? `\n\n${notes}` : ''}
     \n\n*Saved from Chrome*
     `;
