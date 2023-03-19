@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
+import { ChakraProvider } from '@chakra-ui/react'
 
 const rootElement = document.createElement("div");
 rootElement.id = "react-chrome-app";
@@ -27,7 +28,9 @@ document.body.appendChild(globalStyles);
 
 const root = ReactDOM.createRoot(rootElement);
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <ChakraProvider>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </ChakraProvider>
 );
