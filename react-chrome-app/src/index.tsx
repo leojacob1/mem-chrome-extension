@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
+import { ChakraProvider } from '@chakra-ui/react'
 
 const rootElement = document.createElement("div");
 rootElement.id = "react-chrome-app";
@@ -11,11 +12,15 @@ globalStyles.innerHTML = `
   position: fixed;
   left: 0;
   top: 0;
-  width: 300px;
-  height: 100vh;
+  width: 600px;
+  height: 400px;
   background: #ffffff;
   border-right: 1px solid #c2c2c2;
   z-index: 999999999;
+  }
+  body {
+    width: 300px;
+    height: 300px
   }
 `;
 document.body.appendChild(rootElement);
@@ -23,7 +28,9 @@ document.body.appendChild(globalStyles);
 
 const root = ReactDOM.createRoot(rootElement);
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <ChakraProvider>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </ChakraProvider>
 );
