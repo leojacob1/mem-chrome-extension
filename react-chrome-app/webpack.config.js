@@ -1,4 +1,5 @@
 const path = require("path");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: "./src/index.tsx",
@@ -23,7 +24,8 @@ module.exports = {
     extensions: [".tsx", ".ts", ".js"],
   },
   output: {
-    filename: "content.js",
-    path: path.resolve(__dirname, "..", "extension"),
+    path: path.resolve(__dirname, '../extension/'),
+    filename: 'content.js',
   },
+  plugins: [new HtmlWebpackPlugin()],
 };
