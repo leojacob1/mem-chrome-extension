@@ -1,13 +1,12 @@
 const onClick = (info, tab) => {
-  console.log("item " + info.menuItemId + " was clicked");
-
-  //Add all you functional Logic here
   chrome.tabs.query({
       "active": true,
       "currentWindow": true
-  }, function (tabs) {
+  }, (tabs) => {
       chrome.tabs.sendMessage(tabs[0].id, {
-          "functiontoInvoke": "createMem"
+          "functiontoInvoke": "createMem",
+          "title": tabs[0].title,
+          "url": tabs[0].url,
       });
   });
 }

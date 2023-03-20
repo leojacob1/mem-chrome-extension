@@ -12,12 +12,10 @@ globalStyles.innerHTML = `
   position: fixed;
   right: 10px;
   top: 10px;
-  border-radius: 10%;
+  border-radius: 10px;
   width: 20%;
-  height: 50%;
-  max-height: 600px;
+  max-height: 700px;
   background: #F3F3F5;
-  border: 1px solid #c2c2c2;
   z-index: 999999999;
   font-family: Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"
   }
@@ -27,9 +25,10 @@ document.body.appendChild(globalStyles);
 
 const root = ReactDOM.createRoot(rootElement);
 root.render(
-  <ChakraProvider>
-    <React.StrictMode>
+
+  <React.StrictMode>
+    <ChakraProvider>
       <App />
-    </React.StrictMode>
-  </ChakraProvider>
+    </ChakraProvider>
+  </React.StrictMode>
 );
