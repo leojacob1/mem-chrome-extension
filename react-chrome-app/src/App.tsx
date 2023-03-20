@@ -26,6 +26,12 @@ function App() {
     });
   }, [])
 
+  useEffect(() => {
+    chrome.runtime.sendMessage(
+      "Mem client initialized"
+    )
+  }, [memClient])
+
   const createMem = () => {
     if (!activeTab || !memClient) return;
     const content = `[${activeTab.title}](${activeTab.url}) 
